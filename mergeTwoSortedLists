@@ -9,6 +9,10 @@
  * }
  */
 class Solution {
+    /**
+    * Time: O(m + n) - combined length of two lists
+    * Space: O(1) - one head node
+    */
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         ListNode currNode = new ListNode();
         ListNode l1Finger = l1;
