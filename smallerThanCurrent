@@ -2,6 +2,7 @@ class Solution {
     /**
     * Time: O(nlgn) - due to sorting
     * Space: O(n) - copy of array + a hashmap for each unique integer
+    * Results: 5.22% faster runtime, 100% less space usage
     */
     public int[] smallerNumbersThanCurrent(int[] nums) {
         int[] sortArr = Arrays.copyOf(nums, nums.length); // have to copy array before sorting to preserve the input for later
