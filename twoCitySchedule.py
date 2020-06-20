@@ -1,4 +1,6 @@
 class Solution(object):
+    # Time: O(nlgn) - from sorting
+    # Space: O(n) - to hold sorted tuples of passenger costs/indices
     def twoCitySchedCost(self, costs):
         """
         :type costs: List[List[int]]
