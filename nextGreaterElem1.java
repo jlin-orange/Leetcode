@@ -1,5 +1,31 @@
 class Solution {
     /*
+    Stack Solution
+    Time: O(n) , Space: O(n)
+    */
+    public int[] nextGreaterElement(int[] nums1, int[] nums2) {
+        HashMap<Integer, Integer> hm = new HashMap<>();
+        Stack<Integer> s = new Stack<>();
+        
+        for (int num : nums2) {
+            while (!s.isEmpty() && s.peek() < num) {
+                hm.put(s.pop(), num);
+            }
+            s.push(num);
+        }
+        
+        for (int i = 0; i < nums1.length; i++) {
+            if (hm.get(nums1[i]) != null) {
+                nums1[i] = hm.get(nums1[i]);
+            } else {
+                nums1[i] = -1;
+            }
+        }
+        
+        return nums1;
+    }
+    
+    /*
         Store index of each number in HashMap
         
         get index for int in nums1
