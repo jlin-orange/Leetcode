@@ -13,6 +13,9 @@ class Solution {
     - 4 total borders are as such: |  Pacific = 1st row/1st column  |  Atlantic: last row/last column  |
     - At conclusion of DFS searches from all ocean borders, iterate through the 
     initial array, approving squares that are reachable from both oceans
+    
+    Time: O(matrix), meaning you can reach the whole graph from both borders  
+    Space: O(matrix)
     */
     public List<List<Integer>> pacificAtlantic(int[][] matrix) {
         
