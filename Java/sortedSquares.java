@@ -1,22 +1,29 @@
 package Java;
 
 public class sortedSquares {
+    // Two pointers approach to populating an answer array with the highest magnitude squares first.
+    // Note: The left pointer helps catch negative numbers with a large magnitude 
     
+    // Time: O(n)    Space: O(n) - for the answer array
     public int[] sortedSquares(int[] nums) {
-        // Perform swaps if the negative numbers if larger!
+        int arrLength = nums.length;
+        int[] ans = new int[arrLength];
+
         int lo = 0;
-        int hi = nums.length - 1;
-        
-        for (int i = 0; i < nums.length; i++) {
+        int hi = arrLength - 1;
+
+        // Two pointers approach to squaring and storing all the highest magnitude integers first.
+        for (int i = arrLength - 1; i >= 0; i--) {
+            // Use Absolute value to determine magnitude of a number
             if (Math.abs(nums[lo]) < Math.abs(nums[hi])) {
-                nums[i] = nums[hi] * nums[hi];
+                ans[i] = nums[hi] * nums[hi];
                 hi--;
             } else {
-                nums[i] = nums[lo] * nums[lo];
+                ans[i] = nums[lo] * nums[lo];
                 lo++;
             }
         }
-        
-        return nums;
+
+        return ans;
     }
 }
